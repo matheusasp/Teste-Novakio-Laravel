@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +29,7 @@ Route::get('/', function (Request $request) {
 
 Route::get('/hello', [ HelloController::class, 'hello' ]);
 
-// TODO: criar uma rota que retorne a data-hora atual (sugestão: use a função `now()`)
-// TODO: criar uma rota POST que chame uma função em um controller e retorne o texto recebido na requisição
+Route::get('/date', [Controller::class, 'getNowDate']);
+
+Route::post('/text', [Controller::class, 'getText']);
+
